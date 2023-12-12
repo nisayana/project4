@@ -8,12 +8,53 @@ class DynamicTablesPage {
     }
 
     getTableRows() {
-        // return cy.get(".table").find("tbody").children()
         return cy.get("td")
     }
 
     getAddBtn() {
         return cy.get("#add_product_btn")
+    }
+
+    getTotalAmount() {
+        return cy.get("#total_amount")
+    }
+
+    getModalTitle() {
+        return cy.get("#modal_title")
+    }
+
+    getCloseBtn() {
+        return cy.get(".delete")
+    }
+
+    getQuantityLabel() {
+        return cy.get('label[for="product_quantity"]')
+    }
+
+    getQuantityBox() {
+        return cy.get("#quantity")
+    }
+
+    getProductNameLabel() {
+        return cy.get('label[for="product_name"]')
+    }
+
+    getProductPriceLabel() {
+        return cy.get('label[for="product_price"]')
+    }
+
+    inputboxes = {
+        'Quantity': '#quantity',
+        'Product': '#product',
+        'Price': '#price'
+    }
+
+    getInputBoxes(input){
+        return cy.get(this.inputboxes[input])
+    }
+
+    getModal() {
+        return cy.get(".modal-card")
     }
 }
 
