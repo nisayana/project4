@@ -13,6 +13,8 @@
     "@badeball/cypress-cucumber-preprocessor": "^19.2.0",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
     "cypress": "^13.6.1",
+    "eslint": "^8.55.0",
+    "eslint-plugin-cypress": "^2.15.1",
     "typescript": "^5.3.3"
   },
   "cypress-cucumber-preprocessor": {
