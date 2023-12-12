@@ -58,6 +58,9 @@ When(/^the user clicks on the "([^"]*)" button$/, (btn) => {
         case "X":
             dynamicTablesPage.getCloseBtn().click()
             break
+        case "SUBMIT":
+            dynamicTablesPage.getSubmitBtn().click()
+            break
     }
 });
 
@@ -89,3 +92,28 @@ Then(/^the user should see the "([^"]*)" input box is enabled$/, (box) => {
 Then(/^the user should not see the "([^"]*)" modal$/, (modal) => {
 	dynamicTablesPage.getModal().should("not.exist")
 });
+
+
+When(/^the user enters the quantity as "([^"]*)"$/, (quantity) => {
+	dynamicTablesPage.getInputBoxes("Quantity").type(quantity)
+});
+
+
+When(/^the user enters the product as "([^"]*)"$/, (product) => {
+	dynamicTablesPage.getInputBoxes("Product").type(product)
+});
+
+When(/^the user enters the price as "([^"]*)"$/, (price) => {
+	dynamicTablesPage.getInputBoxes("Price").type(price)
+});
+
+
+Then(/^the user should see the table with the new row below$/, (dataTable) => {
+	const arr = dataTable.rawTable.flat()
+	dynamicTablesPage.getNewRow().each(($el, idx) => {
+		cy.wrap($el).should('have.text', arr[idx])
+	})
+});
+
+
+

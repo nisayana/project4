@@ -15,6 +15,10 @@ class DynamicTablesPage {
         return cy.get("#add_product_btn")
     }
 
+    getSubmitBtn() {
+        return cy.get("#submit")
+    }
+
     getTotalAmount() {
         return cy.get("#total_amount")
     }
@@ -31,9 +35,9 @@ class DynamicTablesPage {
         return cy.get('label[for="product_quantity"]')
     }
 
-    getQuantityBox() {
-        return cy.get("#quantity")
-    }
+    // getQuantityBox() {
+    //     return cy.get("#quantity")
+    // }
 
     getProductNameLabel() {
         return cy.get('label[for="product_name"]')
@@ -55,6 +59,10 @@ class DynamicTablesPage {
 
     getModal() {
         return cy.get(".modal-card")
+    }
+
+    getNewRow(){
+        return cy.get("#product_table > tbody > tr:last-child > td")
     }
 }
 
